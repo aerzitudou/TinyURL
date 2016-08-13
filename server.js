@@ -3,25 +3,14 @@
 var express = require('express');
 var app = express();
 
-var apiRouter = require('./routes/api');
+var restRouter = require('./routes/rest');
+var redirectRouter = require('./routes/redirect');
 /*
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
  */
-app.use('/api', apiRouter);
-
-//2nd version: create a server with express, send a get request with plain text/json
-// app.get('/', function(req, res) {
-//     res.send("First Express!");
-// });
-
-// app.get('/', function(req, res) {
-//     res.json({
-//         name: 'Br',
-//         msg: 'express json',
-//         age: 27
-//     })
-// });
+app.use('/rest', restRouter);
+app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here?
 
 app.listen(3000);
 
@@ -46,3 +35,16 @@ app.listen(3000);
 //
 // }).listen(3000);
 
+
+//2nd version: create a server with express, send a get request with plain text/json
+// app.get('/', function(req, res) {
+//     res.send("First Express!");
+// });
+
+// app.get('/', function(req, res) {
+//     res.json({
+//         name: 'Br',
+//         msg: 'express json',
+//         age: 27
+//     })
+// });
