@@ -1,5 +1,6 @@
 // var http = require('http');
 // var fs = require('fs');
+var HashMap = require('hashmap');
 var express = require('express');
 var app = express();
 
@@ -13,6 +14,9 @@ app.use('/rest', restRouter);
 app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here?
 
 app.listen(3000);
+
+app.shortToLongMap = new HashMap();
+app.longToShortMap = new HashMap();
 
 
 //1st version: create a server without express
