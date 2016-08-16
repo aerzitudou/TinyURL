@@ -15,8 +15,8 @@ app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here?
 
 app.listen(3000);
 
-app.shortToLongMap = new HashMap();
-app.longToShortMap = new HashMap();
+app.shortToLongMap = {};
+app.longToShortMap = {};
 
 
 //1st version: create a server without express
