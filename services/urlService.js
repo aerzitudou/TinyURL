@@ -54,7 +54,7 @@ var convertTo64 = function (num) {
         return encode[0];
     }
     while (num != 0) {
-        result = encode[num % 64] + result; //TODO: encode doesn't have value
+        result = encode[num % 64] + result;
         //Javascript doesn't have int type. Result has to be floored to get the division.
         num = Math.floor(num / 64);
     }
