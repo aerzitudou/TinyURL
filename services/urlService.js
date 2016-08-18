@@ -37,9 +37,9 @@ var generateEncode = function (charA, charZ) {
 var encode = [];
 //generate encode
 //have an encode array that contains [0-9] [a-z] [A-Z]
-encode.concat(generateEncode('0', '9'));
-encode.concat(generateEncode('a', 'z'));
-encode.concat(generateEncode('A', 'Z'));
+encode = encode.concat(generateEncode('0', '9'));
+encode = encode.concat(generateEncode('a', 'z'));
+encode = encode.concat(generateEncode('A', 'Z'));
 
 
 var generateShortUrl = function (longToShortMap) {
@@ -55,6 +55,8 @@ var convertTo64 = function (num) {
     }
     while (num != 0) {
         result = encode[num % 64] + result; //TODO: encode doesn't have value
+        //Javascript doesn't have int type. Result has to be floored to get the division.
+        num = Math.floor(num / 64);
     }
     return result;
 }
