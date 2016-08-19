@@ -1,17 +1,19 @@
 // var http = require('http');
 // var fs = require('fs');
-var HashMap = require('hashmap');
 var express = require('express');
 var app = express();
 
+//The "." notation refers to the working directory itself and the ".." notation refers to the working directory's parent directory.
 var restRouter = require('./routes/rest');
 var redirectRouter = require('./routes/redirect');
+var indexRouter = require('./routes/index');
 /*
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
  */
 app.use('/rest', restRouter);
-app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here?
+app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: variable
+app.use('/', indexRouter);
 
 app.listen(3000);
 
