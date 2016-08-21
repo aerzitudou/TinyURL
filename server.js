@@ -56,3 +56,5 @@ app.longToShortMap = {};
 //         age: 27
 //     })
 // });
+
+//this is the server acting as the entry point for the tinyUrl

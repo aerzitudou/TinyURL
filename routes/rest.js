@@ -22,6 +22,7 @@ router.post('/urls', jsonParser, function (req, res) {
 });
 
 router.get("/urls/:shortUrl", function (req, res) {
+    console.log("shortUrl:" + req.params.shortUrl);
     var shortUrl = req.params.shortUrl;
     var longUrl = urlService.getLongUrl(shortUrl, req.app.shortToLongMap);
     console.log("shortUrl: " + shortUrl);
