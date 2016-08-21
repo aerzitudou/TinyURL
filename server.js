@@ -11,9 +11,11 @@ var indexRouter = require('./routes/index');
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
  */
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/rest', restRouter);
-app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: variable
 app.use('/', indexRouter);
+app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: variable
+
 
 app.listen(3000);
 

@@ -21,5 +21,22 @@ router.post('/urls', jsonParser, function (req, res) {
     });
 });
 
+router.get("/urls/:shortUrl", function (req, res) {
+    var shortUrl = req.params.shortUrl;
+    var longUrl = urlService.getLongUrl(shortUrl, req.app.shortToLongMap);
+    console.log("shortUrl: " + shortUrl);
+    console.log("longUrl: " + longUrl);
+    if (longUrl) {
+        res.json({
+            shortUrl: shortUrl,
+            longUrl: longUrl
+        })
+    }
+    else {
+        res.status(404).send("404 not found.");
+    }
+
+});
+
 module.exports = router;
 
