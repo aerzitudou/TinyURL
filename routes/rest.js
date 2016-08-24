@@ -13,11 +13,10 @@ var urlService = require('../services/urlService');
  */
 router.post('/urls', jsonParser, function (req, res) {
     //convert longUrl to shortUrl
-    var shortUrl = urlService.getShortUrl(req.body.longUrl, req.app.shortToLongMap, req.app.longToShortMap);
-
-    res.json({
-        shortUrl: shortUrl,
-        longUrl: req.body.longUrl
+    //as long as it is db related operation, it is IO. So, use function for db operation
+    var longUrl = req.body.longUrl;
+    var shortUrl = urlService.getShortUrl(longUrl, function (url) {  //this is a callback function. url is a long-short url pair.
+        res.json(url);
     });
 });
 

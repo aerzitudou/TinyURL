@@ -4,14 +4,20 @@ var getLongUrl = function (shortUrl, shortToLongMap) {
     return longUrl;
 };
 
-var getShortUrl = function (longUrl, shortToLongMap, longToShortMap) {
+var getShortUrl = function (longUrl, callback) {
     if (longUrl.indexOf('http') === -1) {
         longUrl = 'http://' + longUrl.toString();
     }
 
-    if (longToShortMap[longUrl] != null) {
-        return longToShortMap[longUrl];
-    }
+    // if (longToShortMap[longUrl] != null) {
+    //     return longToShortMap[longUrl];
+    // }
+    //read from db:
+
+    //should first state where to find the data
+    // find what
+    //首先声明数据库表的样子:
+
 
     else {
         var shortUrl = generateShortUrl(longToShortMap);

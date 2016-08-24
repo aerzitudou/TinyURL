@@ -7,6 +7,10 @@ var app = express();
 var restRouter = require('./routes/rest');
 var redirectRouter = require('./routes/redirect');
 var indexRouter = require('./routes/index');
+//connect to mongodb
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://user:user@ds013946.mlab.com:13946/tinyurl');
 /*
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
@@ -19,8 +23,9 @@ app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: var
 
 app.listen(3000);
 
-app.shortToLongMap = {};
-app.longToShortMap = {};
+//get ride of memory map:
+// app.shortToLongMap = {};
+// app.longToShortMap = {};
 
 
 //1st version: create a server without express
