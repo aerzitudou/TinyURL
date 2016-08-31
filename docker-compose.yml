@@ -7,7 +7,6 @@ nginx:
     - "app2: app2"
     - "app3: app3"
 
-
 app1:
   build: ./app
   ports:
@@ -31,3 +30,4 @@ app3:
 
 cache:
   image: redis
+

@@ -1,29 +1,56 @@
 var UrlModel = require('../models/urlmodel');
+var redis = require('redis'); //拿到redis的包
+
+var host = process.env.REDIS_PORT_6379_TCP_ADDR || '127.0.0.1';
+var port = process.env.REDIS_PORT_6379_TCP_PORT || '6379';
+
+
+var redisClient = redis.createClient(port, host); // 链接redis: 先传port, 再传host
 
 var getLongUrl = function (shortUrl, callback) {
-    UrlModel.findOne({shortUrl: shortUrl}, function (err, url) {
-        callback(url);
+    redisClient.get(shortUrl, function (err, longUrl) {
+        if (longUrl) {
+            callback({
+                longUrl: longUrl,
+                shortUrl: shortUrl
+            });
+        } else {
+            UrlModel.findOne({shortUrl: shortUrl}, function (err, url) {
+                callback(url);
+            });
+        }
     });
 };
+
 
 var getShortUrl = function (longUrl, callback) {
     if (longUrl.indexOf('http') === -1) {
         longUrl = 'http://' + longUrl.toString();
     }
 
-    UrlModel.findOne({longUrl: longUrl}, function (err, url) {
-        if (url) {
-            callback(url);//怎么让call getshorturl 的function 拿到url呢: By calling callback and passing in the url
+    redisClient.get(longUrl, function (err, shortUrl) {
+        if (shortUrl) {
+            callback({
+                longUrl: longUrl,
+                shortUrl: shortUrl
+            });
         } else {
-            generateShortUrl(function (shortUrl) {
-
-                var url = new UrlModel({shortUrl: shortUrl, longUrl: longUrl});
-                url.save(); //把url发给数据库让它存起来
-                callback(url);
+            UrlModel.findOne({longUrl: longUrl}, function (err, url) {
+                if (url) {
+                    callback(url);
+                } else {
+                    generateShortUrl(function (shortUrl) {
+                        var url = new UrlModel({shortUrl: shortUrl, longUrl: longUrl});
+                        url.save();
+                        redisClient.set(shortUrl, longUrl);
+                        redisClient.set(longUrl, shortUrl);
+                        callback(url);
+                    });
+                }
             });
         }
-    });
 
+    });
 }
 
 
