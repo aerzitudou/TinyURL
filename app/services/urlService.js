@@ -75,19 +75,19 @@ encode = encode.concat(generateEncode('A', 'Z'));
 
 var generateShortUrl = function (callback) {
     UrlModel.find({}, function (err, urls) {  //找到所有的records, 第一个参数值任意值都符合条件
-        callback(convertTo64(urls.length));
+        callback(convertTo62(urls.length));
     });
 }
 
-var convertTo64 = function (num) {
+var convertTo62 = function (num) {
     var result = '';
     if (num === 0) {
         return encode[0];
     }
     while (num != 0) {
-        result = encode[num % 64] + result;
+        result = encode[num % 62] + result;
         //Javascript doesn't have int type. Result has to be floored to get the division.
-        num = Math.floor(num / 64);
+        num = Math.floor(num / 62);
     }
     return result;
 }
