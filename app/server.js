@@ -9,6 +9,8 @@ var redirectRouter = require('./routes/redirect');
 var indexRouter = require('./routes/index');
 //connect to mongodb
 var mongoose = require('mongoose');
+var useragent = require('express-useragent');
+
 
 mongoose.connect('mongodb://user:user@ds013946.mlab.com:13946/tinyurl');
 /*
@@ -16,9 +18,12 @@ mongoose.connect('mongodb://user:user@ds013946.mlab.com:13946/tinyurl');
  explains middleware mechanism about app.use
  */
 app.use('/public', express.static(__dirname + '/public'));
+app.use(useragent.express()); //
 app.use('/rest', restRouter);
 app.use('/', indexRouter);
 app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: variable
+
+//above are middlewares sit to find matched http request for processing it further
 
 
 app.listen(3000);
