@@ -1,4 +1,4 @@
-var app = angular.module('tinyurlApp', ['ngRoute', 'ngResource']); //code to control the view, get the app by calling angular.module
+var app = angular.module('tinyurlApp', ['ngRoute', 'ngResource', 'chart.js']); //code to control the view, get the app by calling angular.module
 
 app.config(function ($routeProvider) {
     $routeProvider

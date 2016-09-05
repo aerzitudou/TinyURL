@@ -17,6 +17,8 @@ mongoose.connect('mongodb://user:user@ds013946.mlab.com:13946/tinyurl');
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
  */
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
+
 app.use('/public', express.static(__dirname + '/public'));
 app.use(useragent.express()); //
 app.use('/rest', restRouter);
