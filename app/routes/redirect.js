@@ -17,6 +17,7 @@ router.get('*', function (req, res) {
     var longUrl = urlService.getLongUrl(shortUrl, function (url) {
         if (url) {
             res.redirect(url.longUrl); //entry point for short url redirecting to long
+            //每当有用户点击的时候,希望记录用户信息
             statsService.logRequest(shortUrl, req); //log format from req could be changed, since req contain all info, sending req as whole to make sure interface stays unchanged
         } else {
             res.sendfile('./public/views/404.html');
