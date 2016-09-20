@@ -36,7 +36,6 @@ router.get("/urls/:shortUrl", function (req, res) {
 
 router.get("/urls/:shortUrl/:info", function (req, res) {
     statsService.getUrlInfo(req.params.shortUrl, req.params.info, function (data) {
-        console.log("in rest.js Data is:" + data);
         res.json(data);
     });
 });

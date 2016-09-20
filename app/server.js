@@ -2,11 +2,14 @@
 // var fs = require('fs');
 var express = require('express');
 var app = express();
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
 
 //The "." notation refers to the working directory itself and the ".." notation refers to the working directory's parent directory.
 var restRouter = require('./routes/rest');
 var redirectRouter = require('./routes/redirect');
 var indexRouter = require('./routes/index');
+var userAccessRouter = require('./routes/userAccess');
 //connect to mongodb
 var mongoose = require('mongoose');
 var useragent = require('express-useragent');
@@ -17,8 +20,19 @@ mongoose.connect('mongodb://user:user@ds013946.mlab.com:13946/tinyurl');
  http://stackoverflow.com/questions/11321635/nodejs-express-what-is-app-use
  explains middleware mechanism about app.use
  */
+// user schema/model
+var User = require('./models/user.js');
+
+app.use(passport.initialize());
+app.use(passport.session());
+//configure passport
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
+app.use('/user', userAccessRouter);
 app.use('/public', express.static(__dirname + '/public'));
 app.use(useragent.express()); //
 app.use('/rest', restRouter);
@@ -29,6 +43,7 @@ app.use('/:shortUrl', redirectRouter); //why semicolon before shorturl here: var
 
 
 app.listen(3000);
+
 
 //get ride of memory map:
 // app.shortToLongMap = {};
