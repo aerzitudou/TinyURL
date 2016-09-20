@@ -1,55 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd53b647-c80a-41c7-94db-eebd657a5a08" name="Default" comment="UserManagementSystem_1">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/lib/errors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local-mongoose/release.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/lib/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/lib/strategy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/lib/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-local/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/lib/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/lib/strategy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport-strategy/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/authenticator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/errors/authenticationerror.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/framework/connect.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/http/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/middleware/authenticate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/middleware/initialize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/lib/strategies/session.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/passport/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/controllers/loginController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/controllers/logoutController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/controllers/registerController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/js/services.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/views/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/views/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/routes/userAccess.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+    <list default="true" id="fd53b647-c80a-41c7-94db-eebd657a5a08" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/app.js" afterPath="$PROJECT_DIR$/app/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/views/home.html" afterPath="$PROJECT_DIR$/app/public/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/views/index.html" afterPath="$PROJECT_DIR$/app/public/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/rest.js" afterPath="$PROJECT_DIR$/app/routes/rest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server.js" afterPath="$PROJECT_DIR$/app/server.js" />
     </list>
     <ignored path="QuanZhan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -555,7 +508,7 @@
       <workItem from="1473623641639" duration="7303000" />
       <workItem from="1473811485188" duration="681000" />
       <workItem from="1473812340464" duration="12138000" />
-      <workItem from="1474336124926" duration="5561000" />
+      <workItem from="1474336124926" duration="5570000" />
     </task>
     <task id="LOCAL-00001" summary="git test">
       <created>1470967571488</created>
@@ -690,11 +643,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473100819608</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="UserManagementSystem_1">
+      <created>1474343883654</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1474343883654</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190443000" />
+    <option name="totallyTimeSpent" value="190452000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
