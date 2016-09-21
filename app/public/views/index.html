@@ -5,7 +5,7 @@
 
 
     <meta UTF="UTF-8">
-    <title> TinyUrl </title>
+    <title> Tiny Url </title>
     <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/public/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
@@ -33,17 +33,34 @@
 
 </head>
 <body ng-app="tinyurlApp">
+
 <header>
     <div class="container">
-        <div class="navbar navbar-default">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/">TinyUrl</a>
-            </div>
+        <div class="container">
+            <nav class="navbar navbar-light bg-faded" style="background-color: #e3f2fd;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#/">TinyUrl</a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-            </div>
+
+    </div>
 </header>
+
 <div class="container">
     <div ng-view></div>
-        </div>
+</div>
+
 </body>
 </html>
+
+
+
+

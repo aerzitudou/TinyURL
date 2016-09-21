@@ -7,11 +7,13 @@ angular.module('tinyurlApp').controller('registerController',
                 // initial values
                 $scope.error = false;
                 $scope.disabled = true;
+                $scope.isUserLoggedIn = false;
 
                 // call register from service
                 AuthService.register($scope.registerForm.username, $scope.registerForm.password)
                 // handle success
                     .then(function () {
+                        $scope.isUserLoggedIn = true;
                         $location.path('/login');
                         $scope.disabled = false;
                         $scope.registerForm = {};
