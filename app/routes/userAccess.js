@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json()
 var passport = require('passport');
+var User = require('../models/user');
 
 
-var User = require('../models/user.js');
-
-
-router.post('/register', function (req, res) {
+router.post('/register', jsonParser, function (req, res) {
     var req = req;
     console.log("request is :" + req);
     User.register(new User({username: req.body.username}),
@@ -25,7 +24,7 @@ router.post('/register', function (req, res) {
         });
 });
 
-router.post('/login', function (req, res, next) {
+router.post('/login', jsonParser, function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         if (err) {
             return next(err);
